@@ -1,0 +1,12 @@
+DUMProjectName="DUMEngine Game"
+DUMProjectVersion=100
+DUMEngineVersion=0.8
+DUMD3DVERSION=9
+DUMAudioEnable=true
+DUMDX9FogEnable=true
+DUMFullscreenAtStart=true
+DUMWindowWidth=1024
+DUMWindowHeight=600
+DUMAllowSwitchFScreen=true
+DUMFOV=64
+DUMAdaptViewport=1
