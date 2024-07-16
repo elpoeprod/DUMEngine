@@ -1,0 +1,7 @@
+Version 0.8 (17.07.2024):
+  - remade third-person controlling
+  - added more .obj manipulating functions 
+  - removed mandatory `data\*\file` strings in asset loader functions
+
+Version 0.7 (01.04.2024):
+  -added support for .obj, .vtx and .x files
