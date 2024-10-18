@@ -8,7 +8,6 @@ __cam_dir+=(__cam_xtarg-__cam_dir)
 __cam_pitch+=((display_mouse_get_y()-display_get_height()/2)-__cam_pitch)*0.1
 __cam_pitch=clamp(__cam_pitch,minpitch,maxpitch)
 
-
 #define DUMCameraNormal
 __cam_dir-=(display_mouse_get_x()-display_get_width()/2)*(global.DUMsensitivity/5)
 __cam_pitch+=(display_mouse_get_y()-display_get_height()/2)*(global.DUMsensitivity/5)
@@ -57,7 +56,6 @@ z-lengthdir_y(__cam_cams,__cam_pitch)+zoffset,
 __dum_target.x+xoffset,__dum_target.y+yoffset,__dum_target.z+zoffset,
 0,0,1,global._DUM_FOV,global._DUM_CameraWidth/global._DUM_CameraHeight,1,32000)
 
-
 #define DUMCameraSetFirstPerson
 global.firstpersoncam=1
 global.thirdpersoncam=0
@@ -99,7 +97,7 @@ return global.__dum_camera.__cam_pitch
 ///(fname)
 if !global._DUM_audio {debug('SOUND',$01) exit}
 var snd,snd1,realsnd;
-snd=string(argument0) 
+snd=string(argument0)
 if !file_exists(snd) {msg('NO "'+string(argument0)+' FOUND') return -1}
 snd1=string_replace(snd,".dsf",".wav")
 //file_rename(snd,snd1)
@@ -181,24 +179,24 @@ return ss
 
 #define draw_sprite_ext_blur
 ///DRAW_SPRITE_EXT_BLUR(SPR,SUBIMG,X,Y,XSC,YSC,ROT,COL,ALPHA)
-draw_sprite_ext(argument0,argument1,argument2,argument3,argument4,argument5,argument6,argument7,argument8) 
+draw_sprite_ext(argument0,argument1,argument2,argument3,argument4,argument5,argument6,argument7,argument8)
 
-draw_sprite_ext(argument0,argument1,argument2-1,argument3,argument4,argument5,argument6,argument7,argument8/2) 
-draw_sprite_ext(argument0,argument1,argument2+1,argument3,argument4,argument5,argument6,argument7,argument8/2) 
-draw_sprite_ext(argument0,argument1,argument2,argument3-1,argument4,argument5,argument6,argument7,argument8/2) 
-draw_sprite_ext(argument0,argument1,argument2,argument3+1,argument4,argument5,argument6,argument7,argument8/2) 
+draw_sprite_ext(argument0,argument1,argument2-1,argument3,argument4,argument5,argument6,argument7,argument8/2)
+draw_sprite_ext(argument0,argument1,argument2+1,argument3,argument4,argument5,argument6,argument7,argument8/2)
+draw_sprite_ext(argument0,argument1,argument2,argument3-1,argument4,argument5,argument6,argument7,argument8/2)
+draw_sprite_ext(argument0,argument1,argument2,argument3+1,argument4,argument5,argument6,argument7,argument8/2)
 
-draw_sprite_ext(argument0,argument1,argument2-2,argument3,argument4,argument5,argument6,argument7,argument8/4) 
-draw_sprite_ext(argument0,argument1,argument2+2,argument3,argument4,argument5,argument6,argument7,argument8/4) 
-draw_sprite_ext(argument0,argument1,argument2,argument3-2,argument4,argument5,argument6,argument7,argument8/4) 
-draw_sprite_ext(argument0,argument1,argument2,argument3+2,argument4,argument5,argument6,argument7,argument8/4) 
+draw_sprite_ext(argument0,argument1,argument2-2,argument3,argument4,argument5,argument6,argument7,argument8/4)
+draw_sprite_ext(argument0,argument1,argument2+2,argument3,argument4,argument5,argument6,argument7,argument8/4)
+draw_sprite_ext(argument0,argument1,argument2,argument3-2,argument4,argument5,argument6,argument7,argument8/4)
+draw_sprite_ext(argument0,argument1,argument2,argument3+2,argument4,argument5,argument6,argument7,argument8/4)
 
-draw_sprite_ext(argument0,argument1,argument2-3,argument3,argument4,argument5,argument6,argument7,argument8/8) 
-draw_sprite_ext(argument0,argument1,argument2+3,argument3,argument4,argument5,argument6,argument7,argument8/8) 
-draw_sprite_ext(argument0,argument1,argument2,argument3-3,argument4,argument5,argument6,argument7,argument8/8) 
-draw_sprite_ext(argument0,argument1,argument2,argument3+3,argument4,argument5,argument6,argument7,argument8/8) 
+draw_sprite_ext(argument0,argument1,argument2-3,argument3,argument4,argument5,argument6,argument7,argument8/8)
+draw_sprite_ext(argument0,argument1,argument2+3,argument3,argument4,argument5,argument6,argument7,argument8/8)
+draw_sprite_ext(argument0,argument1,argument2,argument3-3,argument4,argument5,argument6,argument7,argument8/8)
+draw_sprite_ext(argument0,argument1,argument2,argument3+3,argument4,argument5,argument6,argument7,argument8/8)
 
-//draw_sprite_ext(argument0,argument1+1,argument2,argument3,argument4,argument5,argument6,argument7,argument8) 
+//draw_sprite_ext(argument0,argument1+1,argument2,argument3,argument4,argument5,argument6,argument7,argument8)
 
 #define debug
 var ret;ret=''
@@ -223,29 +221,28 @@ draw_set_alpha(1)
 
 #define draw_textc
 ///draw_textc(x,y,text,xsc,ysc,angle,col,alpha)
-draw_text_transformed_color(argument0,argument1,argument2,argument3,argument4,argument5,argument6,argument6,argument6,argument6,argument7) 
- 
+draw_text_transformed_color(argument0,argument1,argument2,argument3,argument4,argument5,argument6,argument6,argument6,argument6,argument7)
 
 #define draw_sprite_stretched_ext_blur
 ///draw_sprite_stretch_ext_blur(spr,subimg,x,y,w,h,col,alpha)
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3,argument4,argument5,argument6,argument7) 
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3,argument4,argument5,argument6,argument7)
 
-draw_sprite_stretched_ext(argument0,argument1,argument2-1,argument3,argument4,argument5,argument6,argument7/2) 
-draw_sprite_stretched_ext(argument0,argument1,argument2+1,argument3,argument4,argument5,argument6,argument7/2) 
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3-1,argument4,argument5,argument6,argument7/2) 
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3+1,argument4,argument5,argument6,argument7/2) 
+draw_sprite_stretched_ext(argument0,argument1,argument2-1,argument3,argument4,argument5,argument6,argument7/2)
+draw_sprite_stretched_ext(argument0,argument1,argument2+1,argument3,argument4,argument5,argument6,argument7/2)
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3-1,argument4,argument5,argument6,argument7/2)
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3+1,argument4,argument5,argument6,argument7/2)
 
-draw_sprite_stretched_ext(argument0,argument1,argument2-2,argument3,argument4,argument5,argument6,argument7/4) 
-draw_sprite_stretched_ext(argument0,argument1,argument2+2,argument3,argument4,argument5,argument6,argument7/4) 
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3-2,argument4,argument5,argument6,argument7/4) 
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3+2,argument4,argument5,argument6,argument7/4) 
+draw_sprite_stretched_ext(argument0,argument1,argument2-2,argument3,argument4,argument5,argument6,argument7/4)
+draw_sprite_stretched_ext(argument0,argument1,argument2+2,argument3,argument4,argument5,argument6,argument7/4)
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3-2,argument4,argument5,argument6,argument7/4)
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3+2,argument4,argument5,argument6,argument7/4)
 
-draw_sprite_stretched_ext(argument0,argument1,argument2-3,argument3,argument4,argument5,argument6,argument7/8) 
-draw_sprite_stretched_ext(argument0,argument1,argument2+3,argument3,argument4,argument5,argument6,argument7/8) 
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3-3,argument4,argument5,argument6,argument7/8) 
-draw_sprite_stretched_ext(argument0,argument1,argument2,argument3+3,argument4,argument5,argument6,argument7/8) 
+draw_sprite_stretched_ext(argument0,argument1,argument2-3,argument3,argument4,argument5,argument6,argument7/8)
+draw_sprite_stretched_ext(argument0,argument1,argument2+3,argument3,argument4,argument5,argument6,argument7/8)
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3-3,argument4,argument5,argument6,argument7/8)
+draw_sprite_stretched_ext(argument0,argument1,argument2,argument3+3,argument4,argument5,argument6,argument7/8)
 
-//draw_sprite_ext(argument0,argument1+1,argument2,argument3,argument4,argument5,argument6,argument7,argument8) 
+//draw_sprite_ext(argument0,argument1+1,argument2,argument3,argument4,argument5,argument6,argument7,argument8)
 
 #define key
 return keyboard_check_direct(argument0)
@@ -261,9 +258,7 @@ return keyboard_check_pressed(argument0)
 PlayerHUD.debugmsg+="#"+string(argument0)+"#"
 
 #define string_newline_to_hash
-var h;
-h=string_replace_all(argument0,'#',chr(35))
-return string_replace_all(h,"\n",chr(10))
+return string_replace_all(argument0,"\n","#")
 
 #define elpack_intro
 return "
@@ -311,7 +306,7 @@ buffer_write_string(b,string(file_size(argument2)))
 p=buffer_create()
 buffer_load(p,argument2)
 buffer_copy(b,p)
-buffer_destroy(p) 
+buffer_destroy(p)
 return ds_list_add(argument0,argument2)
 
 #define elpack_create
@@ -349,7 +344,7 @@ buffer_write_string(b,string(file_size(ds_list_find_value(pack,i))))
 p=buffer_create()
 buffer_load(p,ds_list_find_value(pack,i))
 buffer_copy(b,p)
-buffer_destroy(p) 
+buffer_destroy(p)
 i+=1}
 buffer_deflate(b)
 buffer_save(b,filename_change_ext(fname,'.pak'))
@@ -360,7 +355,7 @@ show_debug_message('ELPACK: (package) Success!')
 ///elpack_unpack(file,dest,create_list)
 //Unpacks a .pack file in destination folder
 //You can choose, create list with file names or not
-//If you want to delete unpacked files when you want to end game, 
+//If you want to delete unpacked files when you want to end game,
 //set create_list to true and make script like this:
 //    global.list=elpack_unpack('yourfile.pack','working_directory',1)
 //on Game End:
@@ -392,7 +387,7 @@ return 1
 
 #define DUMTexLoad
 var tex,tex1,realtex;
-tex=string(argument0) 
+tex=string(argument0)
 if !file_exists(tex) return -1
 tex1=string_replace(tex,".dtf",".bmp")
 file_rename(tex,tex1)
@@ -463,14 +458,13 @@ dkey=INPUT_DKEY
 ekey=INPUT_EKEY
 //jkey=global.__spck
 
-
 #define DUMTargetGravity
 //Old collisions. Use if you want levitate
 
 /*globalvar __playInst;__playInst=id                      //player instance as a global var
 with SOLID_OBJECTS {                                    //check collisions
 if __playInst.z+__playInst.zspeed+10>z2                 //if player z    > z2 of a solid
-or __playInst.z+__playInst.zspeed+50<z1 {               //or player z+50 < z1 of a solid 
+or __playInst.z+__playInst.zspeed+50<z1 {               //or player z+50 < z1 of a solid
 solid=0
 } else {
 if !place_meeting(x,y,__playInst) {solid=1} else {
@@ -488,23 +482,18 @@ if __playInst.z+10+__playInst.zspeed>z2 __playInst.zspeed=0
 
 
 
-/*
-if !place_meeting(x,y,__dum_solidobj) {
-if place_meeting(x,y,__dum_floorobj) {
-if z>=THEFLOOR.z2 zground=THEFLOOR.z2 else zground=-10000
-} else zground=-10000
-}*/
+
+if !place_meeting(x,y,__dum_solidobj) zground=-100000
 
 if z>zground zspeed-=argument0
 if z+zspeed<=zground {
-zspeed=0 
+zspeed=0
 z=zground
 if jumped jumped=0
 }
 z+=zspeed
 
 #define DUM3dGravityOBJNew
-
 //IDK, maybe this works.
 
 
@@ -525,7 +514,7 @@ if z>=THEFLOOR.z2-4 zground=THEFLOOR.z2 else zground=-10000
 }
 
 if z+zspeed<=zground {
-zspeed=0 
+zspeed=0
 z=zground
 }
 zspeed-=real(argument0)
@@ -589,7 +578,6 @@ xspd[i]=clamp(xspd[i],0,maxspd+run*2+jumped*2)
 yspd[i]=clamp(yspd[i],0,(maxspd+run*2+jumped*2)*0.75)
 i+=1
 }
-
 
 #define DUMTargetWalkSimple
 spd=4
@@ -769,14 +757,14 @@ return out;
                     DUM ENGINE
                     Build of 18.07.2024
                     by elpoep
-                    
+
                     A simple 3D engine for making games
                         -having its own PACKAGE (.pack) loader (elpack)
                         -menu maker ( .DUI saver/loader included )
                         -font, texture, audio loader
                         -simple functions
-                        
-                        
+
+
                     For .D3D objects converted from .OBJ, make sure you've exported
                     your .OBJ model with "Up Axis: Z, Front axis: Y" parameters.
                     Otherwise, It will be drawn not the way as you wanted.
@@ -940,7 +928,7 @@ file_find_close()
 }
 
 #define DUMKeyInit
-globalvar 
+globalvar
 INPUT_AKEY,INPUT_KKEY,INPUT_UKEY,
 INPUT_BKEY,INPUT_LKEY,INPUT_VKEY,
 INPUT_CKEY,INPUT_MKEY,INPUT_WKEY,
@@ -1040,7 +1028,6 @@ file_text_close(file)
 //return point_distance_3d(argument0,argument1,argument2,argument3,argument4,argument5)
 return point_distance(argument0,argument1,argument3,argument4)+(max(argument2,argument5)-min(argument2,argument5))
 
-
 #define DUMPointInRect
 ///point_in_rectangle(px,py,x1,y1,x2,y2)
 var px,py,x1,y1,x2,y2;
@@ -1056,7 +1043,7 @@ var tur_dir,destdir,turnspeed,dir;
 tur_dir=argument0;
 destdir=argument1;
 turnspeed=argument2;
-        
+
 
 if(tur_dir>359){tur_dir=0}
 if(tur_dir<0){tur_dir=359}
@@ -1068,7 +1055,7 @@ if(sqrt(sqr(dir))<=turnspeed)
 {tur_dir+=dir;}
 else
 {tur_dir+=sign(dir)*turnspeed}
-        
+
 return tur_dir;
 
 #define DUMSetBlColAl
@@ -1089,9 +1076,11 @@ draw_set_alpha(argument2)
 //NEWEST
 d3d_set_fog_ext(fog_vertex,argument1,argument2,argument3)
 
+if argument0 {
 draw_set_color(argument1)
 if global._DUM_normalfog=0 d3d_draw_ellipsoid(x-argument3,y-argument3,z-argument3,x+argument3,y+argument3,z+argument3,-1,0,0,50)
 draw_set_color(c_white)
+}
 
 #define DUMStrCut
 ///(str,pos,len,write_to)
@@ -1114,7 +1103,6 @@ hello+=1
 }
 return h;
 }
-
 
 #define DUMStrStartsWith
 var __l;
@@ -1174,7 +1162,7 @@ if(string_count(".d3d",argument1)>0)d3d_model_load(argument0,argument1);
 if(string_count(".dof",argument1)>0)d3d_model_load(argument0,argument1);
 if(string_count(".mod",argument1)>0)d3d_model_load(argument0,argument1);
 
-if(string_count(".vtx",argument1)>0) 
+if(string_count(".vtx",argument1)>0)
     {
     var str,file,row,data,i,tex_y,temp,t;
     file=file_text_open_read(argument1);
@@ -1187,7 +1175,7 @@ if(string_count(".vtx",argument1)>0)
             do {row=file_text_read_string(file);file_text_readln(file)}
             until string_count(".Vertex",row)=1
             }
-    
+
         do
             {
             row=file_text_read_string(file);file_text_readln(file)
@@ -1216,9 +1204,9 @@ if(string_count(".vtx",argument1)>0)
         do
             {
             d3d_model_primitive_begin(argument0,pr_trianglelist)
-            
+
             row=file_text_read_string(file);file_text_readln(file)
-            
+
             if(string_count("// end if .Index",row)=0)
                 {
                 t=0
@@ -1235,7 +1223,7 @@ if(string_count(".vtx",argument1)>0)
                     i=temp[t]*8
                     tex_y=ds_list_find_value(data,i+7)
                     if(fliptex)tex_y=1-tex_y
-                    
+
                     d3d_model_vertex_normal_texture(argument0,ds_list_find_value(data,i+0)*scale,ds_list_find_value(data,i+1)*scale,ds_list_find_value(data,i+2)*scale
                                                             ,flipnormals*ds_list_find_value(data,i+3),flipnormals*ds_list_find_value(data,i+4),flipnormals*ds_list_find_value(data,i+5)
                                                             ,ds_list_find_value(data,i+6),tex_y);modelload[0]+=1;
@@ -1249,7 +1237,7 @@ if(string_count(".vtx",argument1)>0)
 
         d3d_model_primitive_end(argument0)
         ds_list_clear(data);
-    
+
         do {row=file_text_read_string(file);file_text_readln(file)}
         until string_count("// end of .Brdf",row)=1
         do {row=file_text_read_string(file);file_text_readln(file)}
@@ -1259,8 +1247,8 @@ if(string_count(".vtx",argument1)>0)
     file_text_close(file);
     ds_list_destroy(data);
     }
-    
-if(string_count(".obj",argument1)>0) 
+
+if(string_count(".obj",argument1)>0)
     {
     var str,file,row,tex_y,v_x,v_y,v_z,n_x,n_y,n_z,u,v,i,numb,edges,faces,t,p_count;
     file=file_text_open_read(argument1);
@@ -1273,7 +1261,7 @@ if(string_count(".obj",argument1)>0)
     u=ds_list_create();ds_list_add(u,0);
     v=ds_list_create();ds_list_add(v,0);
     row=""
-    
+
     do
         {
         if(string_count("v ",row)=0)
@@ -1281,60 +1269,60 @@ if(string_count(".obj",argument1)>0)
            do {row=file_text_read_string(file);file_text_readln(file)}
            until string_char_at(row,1)="v"&&string_char_at(row,2)=" "
            }
-    
-        do 
+
+        do
             {
             row=string_delete(row,1,string_pos(" ",row));
-            str=string_copy(row,1,string_pos(" ",row)-1); 
+            str=string_copy(row,1,string_pos(" ",row)-1);
             row=string_delete(row,1,string_pos(" ",row));
             ds_list_add(v_x,real(str));
-            str=string_copy(row,1,string_pos(" ",row)-1) 
+            str=string_copy(row,1,string_pos(" ",row)-1)
             row=string_delete(row,1,string_pos(" ",row));
             ds_list_add(v_y,real(str));
-            str=string_copy(row,1,string_length(row)) 
+            str=string_copy(row,1,string_length(row))
             ds_list_add(v_z,real(str));
             row=file_text_read_string(file);file_text_readln(file)
             }
         until string_count("v ",row)=0
-        
+
         do {row=file_text_read_string(file);file_text_readln(file)}
         until (string_char_at(row,1)="v"&&string_char_at(row,2)="n")||(string_char_at(row,1)="v"&&string_char_at(row,2)="t")||(string_char_at(row,1)="f"&&string_char_at(row,2)=" ")
 
         if(string_count("vn ",row)=1)
             {
-            do 
+            do
                 {
                 row=string_delete(row,1,string_pos(" ",row));
-                str=string_copy(row,1,string_pos(" ",row)-1); 
+                str=string_copy(row,1,string_pos(" ",row)-1);
                 row=string_delete(row,1,string_pos(" ",row));
                 ds_list_add(n_x,real(str));
-                str=string_copy(row,1,string_pos(" ",row)-1) 
+                str=string_copy(row,1,string_pos(" ",row)-1)
                 row=string_delete(row,1,string_pos(" ",row));
                 ds_list_add(n_y,real(str));
-                str=string_copy(row,1,string_length(row)) 
-                ds_list_add(n_z,real(str)); 
-                row=file_text_read_string(file);file_text_readln(file) 
+                str=string_copy(row,1,string_length(row))
+                ds_list_add(n_z,real(str));
+                row=file_text_read_string(file);file_text_readln(file)
                 }
             until string_count("vn ",row)=0
             }
-                
+
         if(string_count("vt ",row)=0)
            {
             do {row=file_text_read_string(file);file_text_readln(file)}
             until (string_char_at(row,1)="v"&&string_char_at(row,2)="t")||(string_char_at(row,1)="f"&&string_char_at(row,2)=" ")
             }
-        
+
         if(string_count("vt ",row)=1)
             {
-            do 
+            do
                 {
                 row=string_delete(row,1,string_pos(" ",row));
-                str=string_copy(row,1,string_pos(" ",row)-1); 
+                str=string_copy(row,1,string_pos(" ",row)-1);
                 row=string_delete(row,1,string_pos(" ",row));
                 ds_list_add(u,real(str));
-                str=string_copy(row,1,string_length(row)) 
+                str=string_copy(row,1,string_length(row))
                 ds_list_add(v,real(str));
-                row=file_text_read_string(file);file_text_readln(file) 
+                row=file_text_read_string(file);file_text_readln(file)
                 }
             until string_count("vt ",row)=0
             }
@@ -1343,39 +1331,39 @@ if(string_count(".obj",argument1)>0)
            do {row=file_text_read_string(file);file_text_readln(file)}
            until (string_char_at(row,1)="f"&&string_char_at(row,2)=" ")
            }
- 
-  
+
+
         pos=0
         do
             {
             d3d_model_primitive_begin(argument0,pr_trianglelist)
-            
+
             row=string_delete(row,1,string_pos(" ",row));
             row=string_replace_all(row,"//","/0/");
-            
-            str=string_copy(row,1,string_pos(" ",row)-1); 
+
+            str=string_copy(row,1,string_pos(" ",row)-1);
             p_count=string_count("/",str)
             if(p_count!=2)row=string_replace_all(row," ","/0 ");
-            
+
             if(string_char_at(row,string_length(row))=" ")row=string_copy(row,1,string_length(row)-1)
-            
+
             edges=string_count(" ",row)+1
             for(t=0;t<edges;t+=1)
                 {
-                str=string_copy(row,1,string_pos("/",row)-1); 
+                str=string_copy(row,1,string_pos("/",row)-1);
                 row=string_delete(row,1,string_pos("/",row));
                 faces[t,0]=real(str);
 
-                str=string_copy(row,1,string_pos("/",row)-1); 
+                str=string_copy(row,1,string_pos("/",row)-1);
                 row=string_delete(row,1,string_pos("/",row));
                 faces[t,1]=real(str);
 
             if!(t=edges-1)
                 {
-                str=string_copy(row,1,string_pos(" ",row)-1); 
+                str=string_copy(row,1,string_pos(" ",row)-1);
                 row=string_delete(row,1,string_pos(" ",row));
                 }
-                else str=string_copy(row,1,string_length(row)); 
+                else str=string_copy(row,1,string_length(row));
             faces[t,2]=real(str);
             }
             //build faces
@@ -1408,7 +1396,7 @@ if(string_count(".obj",argument1)>0)
                     }
                 }
             d3d_model_primitive_end(argument0)
-            d3d_model_primitive_begin(argument0,pr_trianglelist)   
+            d3d_model_primitive_begin(argument0,pr_trianglelist)
 
             row=file_text_read_string(file);file_text_readln(file)
             if(string_count("f ",row)=0)
@@ -1417,33 +1405,33 @@ if(string_count(".obj",argument1)>0)
                 until (string_char_at(row,1)="f"&&string_char_at(row,2)=" ")||(string_char_at(row,1)="v"&&string_char_at(row,2)=" ")||file_text_eof(file);
                 }
             }
-        until string_count("f ",row)=0 
-        
+        until string_count("f ",row)=0
+
         d3d_model_primitive_end(argument0)
         while !(string_count("v ",row)=1||file_text_eof(file)) {row=file_text_read_string(file);file_text_readln(file)}
         }
     until file_text_eof(file);
-           
+
     file_text_close(file);
     ds_list_destroy(v_x);ds_list_destroy(v_y);ds_list_destroy(v_z);
     ds_list_destroy(n_x);ds_list_destroy(n_y);ds_list_destroy(n_z);
     ds_list_destroy(u);ds_list_destroy(v);
     }
 
-if(string_count(".x",argument1)>0) 
+if(string_count(".x",argument1)>0)
     {
     var str,file,row,tex_y,v_x,v_y,v_z,n_x,n_y,n_z,u,v,i,numb_faces,edges,faces,t,p_count;
     file=file_text_open_read(argument1);
     v_x=ds_list_create();
     v_y=ds_list_create();
-    v_z=ds_list_create();    
+    v_z=ds_list_create();
     n_x=ds_list_create();
     n_y=ds_list_create();
     n_z=ds_list_create();
     u=ds_list_create();
     v=ds_list_create();
     row=""
-    
+
     do
         {
         if!(string_count("Mesh {",row)=1)
@@ -1499,12 +1487,12 @@ if(string_count(".x",argument1)>0)
         until string_count("MeshNormals {",row)=1
         
         row=file_text_read_string(file);file_text_readln(file);//don't read numb of normals
-        
+
         do
             {
             row=file_text_read_string(file);file_text_readln(file)
                 row=string_replace_all(row," ","")
-            
+
                 str=string_copy(row,1,string_pos(";",row)-1)
                 row=string_delete(row,1,string_pos(";",row))
                 ds_list_add(n_x,real(str))
@@ -1520,7 +1508,7 @@ if(string_count(".x",argument1)>0)
 
         do {row=file_text_read_string(file);file_text_readln(file)}
         until string_count("MeshTextureCoords {",row)=1
-        
+
         row=file_text_read_string(file);file_text_readln(file);//don't read numb of MeshTextureCoords 
         
         do
@@ -1841,7 +1829,6 @@ d3d_draw_wall(-10000,10000,-10000,10000,10000,10000,t4,1,1)
 d3d_draw_wall(-10000,-10000,-10000,-10000,10000,10000,t5,1,1)
 d3d_draw_wall(10000,-10000,-10000,10000,10000,10000,t5,1,1)
 
-
 #define model_load
 ///(fname,flipnormals)
 // MOSAIC Light 3D OBJ IMPORTER
@@ -2030,7 +2017,6 @@ for (fc=0;fc<ds_list_size(faces_list);fc+=1) {
 d3d_model_primitive_end(tm);
 return tm;
 
-
 #define DUMFileWrite
 file_text_write_string(argument0,string(argument1))
 file_text_writeln(argument0)
@@ -2042,7 +2028,7 @@ var fn;fn=string_lower(argument0)
 fliptex=0
 scale=1
 flipnormals=0
-if(string_count(".obj",fn)>0) 
+if(string_count(".obj",fn)>0)
     {
     var str,file,row,tex_y,v_x,v_y,v_z,n_x,n_y,n_z,u,v,i,numb,edges,faces,t,p_count;i=0
     repeat(64) {__model[i]=d3d_model_create() i+=1} i=0
@@ -2056,71 +2042,71 @@ if(string_count(".obj",fn)>0)
     u=ds_list_create();ds_list_add(u,0);
     v=ds_list_create();ds_list_add(v,0);
     row=""
-    
+
     do
         {
-        
+
         if string_count('o ',row)>0 i+=1
-        
+
         if(string_count("v ",row)=0)
            {
            do {row=file_text_read_string(file);file_text_readln(file)}
            until string_char_at(row,1)="v"&&string_char_at(row,2)=" "
            }
-    
-        do 
+
+        do
             {
             row=string_delete(row,1,string_pos(" ",row));
-            str=string_copy(row,1,string_pos(" ",row)-1); 
+            str=string_copy(row,1,string_pos(" ",row)-1);
             row=string_delete(row,1,string_pos(" ",row));
             ds_list_add(v_x,real(str));
-            str=string_copy(row,1,string_pos(" ",row)-1) 
+            str=string_copy(row,1,string_pos(" ",row)-1)
             row=string_delete(row,1,string_pos(" ",row));
             ds_list_add(v_y,real(str));
-            str=string_copy(row,1,string_length(row)) 
+            str=string_copy(row,1,string_length(row))
             ds_list_add(v_z,real(str));
             row=file_text_read_string(file);file_text_readln(file)
             }
         until string_count("v ",row)=0
-        
+
         do {row=file_text_read_string(file);file_text_readln(file)}
         until (string_char_at(row,1)="v"&&string_char_at(row,2)="n")||(string_char_at(row,1)="v"&&string_char_at(row,2)="t")||(string_char_at(row,1)="f"&&string_char_at(row,2)=" ")
 
         if(string_count("vn ",row)=1)
             {
-            do 
+            do
                 {
                 row=string_delete(row,1,string_pos(" ",row));
-                str=string_copy(row,1,string_pos(" ",row)-1); 
+                str=string_copy(row,1,string_pos(" ",row)-1);
                 row=string_delete(row,1,string_pos(" ",row));
                 ds_list_add(n_x,real(str));
-                str=string_copy(row,1,string_pos(" ",row)-1) 
+                str=string_copy(row,1,string_pos(" ",row)-1)
                 row=string_delete(row,1,string_pos(" ",row));
                 ds_list_add(n_y,real(str));
-                str=string_copy(row,1,string_length(row)) 
-                ds_list_add(n_z,real(str)); 
-                row=file_text_read_string(file);file_text_readln(file) 
+                str=string_copy(row,1,string_length(row))
+                ds_list_add(n_z,real(str));
+                row=file_text_read_string(file);file_text_readln(file)
                 }
             until string_count("vn ",row)=0
             }
-                
+
         if(string_count("vt ",row)=0)
            {
             do {row=file_text_read_string(file);file_text_readln(file)}
             until (string_char_at(row,1)="v"&&string_char_at(row,2)="t")||(string_char_at(row,1)="f"&&string_char_at(row,2)=" ")
             }
-        
+
         if(string_count("vt ",row)=1)
             {
-            do 
+            do
                 {
                 row=string_delete(row,1,string_pos(" ",row));
-                str=string_copy(row,1,string_pos(" ",row)-1); 
+                str=string_copy(row,1,string_pos(" ",row)-1);
                 row=string_delete(row,1,string_pos(" ",row));
                 ds_list_add(u,real(str));
-                str=string_copy(row,1,string_length(row)) 
+                str=string_copy(row,1,string_length(row))
                 ds_list_add(v,real(str));
-                row=file_text_read_string(file);file_text_readln(file) 
+                row=file_text_read_string(file);file_text_readln(file)
                 }
             until string_count("vt ",row)=0
             }
@@ -2129,40 +2115,40 @@ if(string_count(".obj",fn)>0)
            do {row=file_text_read_string(file);file_text_readln(file)}
            until (string_char_at(row,1)="f"&&string_char_at(row,2)=" ")
            }
-        
- 
-  
+
+
+
         pos=0
         do
             {
             d3d_model_primitive_begin(__model[i],pr_trianglelist)
-            
+
             row=string_delete(row,1,string_pos(" ",row));
             row=string_replace_all(row,"//","/0/");
-            
-            str=string_copy(row,1,string_pos(" ",row)-1); 
+
+            str=string_copy(row,1,string_pos(" ",row)-1);
             p_count=string_count("/",str)
             if(p_count!=2)row=string_replace_all(row," ","/0 ");
-            
+
             if(string_char_at(row,string_length(row))=" ")row=string_copy(row,1,string_length(row)-1)
-            
+
             edges=string_count(" ",row)+1
             for(t=0;t<edges;t+=1)
                 {
-                str=string_copy(row,1,string_pos("/",row)-1); 
+                str=string_copy(row,1,string_pos("/",row)-1);
                 row=string_delete(row,1,string_pos("/",row));
                 faces[t,0]=real(str);
 
-                str=string_copy(row,1,string_pos("/",row)-1); 
+                str=string_copy(row,1,string_pos("/",row)-1);
                 row=string_delete(row,1,string_pos("/",row));
                 faces[t,1]=real(str);
 
             if!(t=edges-1)
                 {
-                str=string_copy(row,1,string_pos(" ",row)-1); 
+                str=string_copy(row,1,string_pos(" ",row)-1);
                 row=string_delete(row,1,string_pos(" ",row));
                 }
-                else str=string_copy(row,1,string_length(row)); 
+                else str=string_copy(row,1,string_length(row));
             faces[t,2]=real(str);
             }
             //build faces
@@ -2195,8 +2181,8 @@ if(string_count(".obj",fn)>0)
                     }
                 }
             d3d_model_primitive_end(__model[i])
-            if 
-            d3d_model_primitive_begin(__model[i],pr_trianglelist)   
+            if
+            d3d_model_primitive_begin(__model[i],pr_trianglelist)
 
             row=file_text_read_string(file);file_text_readln(file)
             if(string_count("f ",row)=0)
@@ -2205,19 +2191,19 @@ if(string_count(".obj",fn)>0)
                 until (string_char_at(row,1)="f"&&string_char_at(row,2)=" ")||(string_char_at(row,1)="v"&&string_char_at(row,2)=" ")||file_text_eof(file);
                 }
             }
-        until string_count("f ",row)=0 
-        
+        until string_count("f ",row)=0
+
         d3d_model_primitive_end(__model[i])
         while !(string_count("v ",row)=1||file_text_eof(file)) {row=file_text_read_string(file);file_text_readln(file)}
         }
     until file_text_eof(file);
-           
+
     file_text_close(file);
     ds_list_destroy(v_x);ds_list_destroy(v_y);ds_list_destroy(v_z);
     ds_list_destroy(n_x);ds_list_destroy(n_y);ds_list_destroy(n_z);
     ds_list_destroy(u);ds_list_destroy(v);
     }
-    
+
 var m;m=ds_map_create()
 var ii;ii=0
 repeat(i) {
@@ -2245,4 +2231,13 @@ return model;
 var m;m=d3d_model_create_and_load(argument0)
 d3d_model_bake(m)
 return m;
+
+#define DUMTargetCollision
+if z+zspeed>=other.z2-10 {/*if z=zground n=1 else */zground=other.z2} else {if z+10+zspeed>other.z2 zspeed=0}
+
+#define DUMSolidCollision
+if global.__dum_camera.__dum_target.z>z2-10 or global.__dum_camera.__dum_target.z<z1-40 solid=0 else
+{
+if !place_meeting(x,y,global.__dum_camera.__dum_target) solid=1 else {if global.__dum_camera.__dum_target.z<z1-35 global.__dum_camera.__dum_target.zspeed=0 else global.__dum_camera.__dum_target.z=z2}
+}
 
